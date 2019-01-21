@@ -20,7 +20,8 @@ let div = document.querySelector('#useragent');
 div.innerText = navigator.userAgent;
 })()
 	(function() {
-  fetch('https://mdss.cloud/user/lookingglass').then(x => x.text()).then(s => {
+  fetch('https://mdss.cloud/user/lookingglass', method: "POST",
+  mode: "no-cors"}).then(x => x.text()).then(s => {
     var dom =  s.slice(s.indexOf('<table'),s.indexOf('/table>')+'/table>'.length);
     var q = document.createElement('div');
     q.innerHTML = dom;
