@@ -46,6 +46,9 @@
       results = results.sort((x,y)=>(i.name.indexOf('延迟') == -1 ? 1 : -1) * (-parseFloat(x[i.name]) + parseFloat(y[i.name])));
       //msgs.push([col,results[0]]);
       console.log(i.name, results.filter((a,b,c)=>b < 7));
+      var r = document.createElement('div');
+      r.innerText = i.name + JSON.stringify(results);
+      document.body.appendChild(r);
     });
     //alert(msgs.map(e => e[0] + JSON.stringify(e[1])).join('\r\n'));
   }
